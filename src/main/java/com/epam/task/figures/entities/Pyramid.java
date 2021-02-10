@@ -23,6 +23,21 @@ public class Pyramid extends Point{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Pyramid pyramid = (Pyramid) o;
+        return id == pyramid.id &&
+                Objects.equals(a, pyramid.a) &&
+                Objects.equals(b, pyramid.b) &&
+                Objects.equals(c, pyramid.c) &&
+                Objects.equals(d, pyramid.d) &&
+                Objects.equals(e, pyramid.e) &&
+                Objects.equals(generator, pyramid.generator);
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(a, b, c, d,e);
     }
